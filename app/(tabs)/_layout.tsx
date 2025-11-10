@@ -54,6 +54,16 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="bai5"
+        options={{
+          title: 'Bài 5',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'partly-sunny' : 'partly-sunny-outline'} size={24} color={color} />
+          ),
+        }}
+      />
     </Tabs>
+    
   );
 }

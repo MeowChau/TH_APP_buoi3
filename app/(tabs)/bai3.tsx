@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function Bai3Screen() {
-  const [backgroundColor, setBackgroundColor] = useState('#3498db');
+  const [backgroundColor, setBackgroundColor] = useState('#9b8f07ff');
 
   const generateRandomColor = () => {
     const letters = '0123456789ABCDEF';
