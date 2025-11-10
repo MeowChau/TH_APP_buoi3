@@ -27,14 +27,21 @@ export default function Bai3Screen() {
     return brightness < 128;
   };
 
+  // Tính toán màu chữ (trắng hoặc đen) dựa trên màu nền
   const textColor = isDark(backgroundColor) ? '#ffffff' : '#000000';
 
   return (
-    <View style={styles.container}>
+    // 1. ÁP DỤNG MÀU NỀN TỪ STATE Ở ĐÂY
+    <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.content}>
-        <Text style={styles.title}>🎨 Đổi Màu Ngẫu Nhiên</Text>
+        
+        {/* 2. ÁP DỤNG MÀU CHỮ TỰ ĐỘNG Ở ĐÂY */}
+        <Text style={[styles.title, { color: textColor }]}>
+          🎨 Đổi Màu Ngẫu Nhiên
+        </Text>
         
         <View style={styles.colorBoxContainer}>
+          {/* Hộp nhỏ này vẫn dùng state 'backgroundColor' như cũ */}
           <View style={[styles.colorBox, { backgroundColor }]}>
             <Text style={[styles.colorCode, { color: textColor }]}>
               {backgroundColor.toUpperCase()}
@@ -60,7 +67,7 @@ export default function Bai3Screen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    // Xóa 'backgroundColor: #f8f9fa' cố định ở đây
   },
   content: {
     flex: 1,
@@ -71,8 +78,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#2c3e50',
     marginBottom: 40,
+    // Xóa 'color: #2c3e50' cố định ở đây
   },
   colorBoxContainer: {
     marginBottom: 40,
@@ -88,6 +95,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 15,
     elevation: 10,
+    borderWidth: 2,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
   },
   colorCode: {
     fontSize: 20,
@@ -98,7 +107,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 3,
   },
   button: {
-    backgroundColor: '#2c3e50',
+    backgroundColor: '#2c3e50', 
     paddingHorizontal: 40,
     paddingVertical: 18,
     borderRadius: 30,
@@ -116,7 +125,7 @@ const styles = StyleSheet.create({
   },
   infoCard: {
     flexDirection: 'row',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#ffffff', 
     padding: 15,
     borderRadius: 15,
     alignItems: 'center',
